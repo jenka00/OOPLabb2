@@ -6,30 +6,31 @@ namespace OOPLabb2
     {
         static void Main(string[] args)
         {
-            Djur d1 = new Djur("Lejon", 10, 150, "gyllene");
-            Console.WriteLine(d1.MakeSound());
-            Console.WriteLine(d1.Colour);
-            d1.AnimalFacts();
-            d1.Eat();
-
-            Djur d2 = new Djur();
-            Console.WriteLine(d2.Colour);
-
-            Parrot p1 = new Parrot();
-            Console.WriteLine(p1.MakeSound());
-            Console.WriteLine(p1.AnimalFacts());
-
-            Parrot p2 = new Parrot("Bea", 12, 2.5, "blå", true);
-            Console.WriteLine(p2.MakeSound());
-
-            Console.WriteLine(p2.AnimalFacts());
-
-            Lion l1 = new Lion();
-            Console.WriteLine(l1.MakeSound());
+            Lion l1 = new Lion("Leo", 12, 173, "gyllene");
+            
             Console.WriteLine(l1.AnimalFacts());
 
-            PolarBear PB1 = new PolarBear();
-            Console.WriteLine(PB1.Food);
+            Console.WriteLine("\n-----------------------------------------------------");
+
+            Parrot p1 = new Parrot("Polly", 24, 1.3, "blå", true);
+            
+            Console.WriteLine(p1.AnimalFacts());
+
+            Console.WriteLine("\n-----------------------------------------------------");
+                                 
+            PolarBear PB1 = new PolarBear("Isis", 14, 249);
+
+            Console.WriteLine(PB1.AnimalFacts());
+
+            Console.WriteLine("\n-----------------------------------------------------");
+
+            BrownBear BB1 = new BrownBear("Nalle", 14, 250, true);
+
+            Console.WriteLine(BB1.AnimalFacts());
+
+            Console.WriteLine("\n-----------------------------------------------------");
+
+            Console.WriteLine("{0} \n{1} \n{2} \n{3}", l1.MakeSound(), p1.MakeSound(), PB1.MakeSound(),BB1.MakeSound()); 
 
         }
     }

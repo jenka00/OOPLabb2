@@ -41,7 +41,7 @@ namespace OOPLabb2
 
         public void Hunt()
         {
-            Console.WriteLine("Lejonet jagar en zebra.");
+            Console.WriteLine("Lejonet är ute och jagar.");
         }
 
         public override string AnimalFacts()

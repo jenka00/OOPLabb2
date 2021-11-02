@@ -5,7 +5,7 @@ using System.Text;
 namespace OOPLabb2
 {
     class Bear : Djur
-    {
+    {        
         public Bear() : this("No data", 000, 000, "No data")
         {
 
@@ -40,16 +40,16 @@ namespace OOPLabb2
 
     class PolarBear : Bear
     {
-        public PolarBear() : this("No data", 000, 000, "No data")
+        public PolarBear() : this("No data", 000, 000)
         {
 
         }
-        public PolarBear(string name, int age, double weight, string colour)
+        public PolarBear(string name, int age, double weight)
         {
             Name = name;
             Age = age;
             Weight = weight;
-            Colour = colour;
+            Colour = "vit";
             NumberOfLegs = 4;
             Sound = "VRAAAUUU";
             Food = "vikare";
@@ -80,7 +80,7 @@ namespace OOPLabb2
         {
             if (Weight < 300)
             {
-                Console.WriteLine("Isbjörnen svälter. Den måste genast äta fler {0}.", Food);
+                Console.WriteLine("Isbjörnen svälter. Den måste genast äta {0}.", Food);
             }
             else if (Weight > 300 && Weight < 500)
             {
@@ -94,16 +94,19 @@ namespace OOPLabb2
     }
     class BrownBear : Bear
     {
-        public BrownBear() : this("No data", 000, 000, "No data")
+        bool BornInCaptivity = false;
+
+        public BrownBear() : this("No data", 000, 000, false)
         {
 
         }
-        public BrownBear(string name, int age, double weight, string colour)
+        public BrownBear(string name, int age, double weight, bool bornInCaptivity)
         {
             Name = name;
             Age = age;
             Weight = weight;
-            Colour = colour;
+            Colour = "brun";
+            BornInCaptivity = bornInCaptivity;
             NumberOfLegs = 4;
             Sound = "BRUM BRUM";
             Food = "bär";
@@ -128,6 +131,27 @@ namespace OOPLabb2
         {
             return "Det här är en brunbjörn som heter " + Name + ". Dess ålder är " + Age + " år. \nDen har " + NumberOfLegs + " ben. " +
                 "Färgen är " + Colour + ". Vikten är " + Weight + " kg. Huvudsaklig föda är " + Food + ".";
+        }
+
+        public void Hibernates()
+        {
+            DateTime dateToday = DateTime.Now;
+            
+            DateTime dateToHibernate = DateTime.Parse("2021 - 11 - 15");           
+            
+            TimeSpan daysUntilHibernat = dateToHibernate - dateToday;
+            
+            int daysLeft = Convert.ToInt32(daysUntilHibernat.TotalDays);
+                     
+            if(0 < daysLeft)
+            {
+                Console.WriteLine("{0} dagar kvar tills björnen går i ide.", daysLeft);
+            }
+            else
+            {
+                Console.WriteLine("Björnen sover i sitt lugna bo.");
+            }
+            
         }
     }
 
