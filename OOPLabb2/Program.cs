@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace OOPLabb2
 {
     class Program
@@ -30,8 +30,22 @@ namespace OOPLabb2
 
             Console.WriteLine("\n-----------------------------------------------------");
 
-            Console.WriteLine("{0} \n{1} \n{2} \n{3}", l1.MakeSound(), p1.MakeSound(), PB1.MakeSound(),BB1.MakeSound()); 
+            Console.WriteLine("{0} \n{1} \n{2} \n{3}", l1.MakeSound(), p1.MakeSound(), PB1.MakeSound(),BB1.MakeSound());
 
+            Console.WriteLine("\n-----------------------------------------------------");
+
+            List<Djur> allAnimals = new List<Djur>();    //Djuren kan också låta genom att först lägga dem i en lista,
+                                                         //och sedan loopa igenom listan så att metoden MakeSound utförs
+            allAnimals.Add(l1);                          //för var och en av dem.               
+            allAnimals.Add(p1);
+            allAnimals.Add(BB1);
+            allAnimals.Add(PB1);
+
+            foreach (Djur animal in allAnimals)
+            {
+                Console.WriteLine(animal.MakeSound());
+            }
+            
         }
     }
 }
